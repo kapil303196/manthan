@@ -5,21 +5,21 @@ const getPersonById = async (id) => {
     const er = {
       error: "Please provide id",
     };
-    console.log(er);
+    // console.log(er);
     return er;
   }
   if (typeof id !== "number") {
     const er = {
       error: "id should be number",
     };
-    console.log(er);
+    // console.log(er);
     return er;
   }
   if (0 > id || id > 1000) {
     const er = {
       error: "id should be between 0 and 1000",
     };
-    console.log(er);
+    // console.log(er);
     return er;
   }
   const persons = await axios.get(
@@ -28,7 +28,7 @@ const getPersonById = async (id) => {
   const person = await persons.data.filter((p) => {
     return p.id === id;
   });
-  console.log(person[0]);
+  // console.log(person[0]);
   return { data: person[0] };
 };
 
@@ -37,14 +37,14 @@ const howManyPerState = async (state) => {
     let er = {
       error: "please provide state",
     };
-    console.log(er);
+    // console.log(er);
     return er;
   }
   if (typeof state !== "string") {
     let er = {
       error: "state should be string",
     };
-    console.log(er);
+    // console.log(er);
     return er;
   }
   const persons = await axios.get(
@@ -54,13 +54,13 @@ const howManyPerState = async (state) => {
     return p.address.state === state;
   });
   if (person.length > 0) {
-    console.log(person.length);
+    // console.log(person.length);
     return { data: person.length };
   } else {
     let er = {
       error: "there are no people in given state",
     };
-    console.log(er);
+    // console.log(er);
     return er;
   }
 };
@@ -70,21 +70,21 @@ const personByAge = async (index) => {
     const er = {
       error: "Please provide index",
     };
-    console.log(er);
+    // console.log(er);
     return er;
   }
   if (typeof index !== "number") {
     const er = {
       error: "index should be number",
     };
-    console.log(er);
+    // console.log(er);
     return er;
   }
   if (0 > index || index >= 1000) {
     const er = {
       error: "index should be between 0 and 1000",
     };
-    console.log(er);
+    // console.log(er);
     return er;
   }
   const persons = await axios.get(
@@ -112,8 +112,8 @@ const personByAge = async (index) => {
     date_of_birth: d[index].date_of_birth,
     age: d[index].age,
   };
-  console.log("person", val);
-  return val;
+  // console.log("person", val);
+  return {data: val};
 };
 
 const peopleMetrics = async () => {
@@ -152,8 +152,8 @@ const peopleMetrics = async () => {
     mostRepeatingCity: logMostFrequentElement(citiesArray),
     averageAge: ageArray.reduce((a, b) => a + b) / ageArray.length,
   };
-  console.log(response);
-  return response;
+  // console.log(response);
+  return {data: response};
 };
 
 const totalConsonants = (string) => {
@@ -237,7 +237,11 @@ const logMostFrequentElement = (inputArg) => {
     text = e.message;
   }
   return text;
-  document
-    .getElementById("out")
-    .appendChild(document.createTextNode(text + "\n"));
 };
+
+module.exports = {
+  getPersonById,
+  howManyPerState,
+  personByAge,
+  peopleMetrics
+}
