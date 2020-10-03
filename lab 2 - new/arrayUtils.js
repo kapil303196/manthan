@@ -115,7 +115,7 @@ const countRepeating = function countRepeating(arr) {
   }
   for (var i = 0; i < n; i++) {
     if (newArr[i] != check) {
-      if (count > 0) {
+      if (count > 1) {
         myObj[check] = count;
       }
       check = newArr[i];
@@ -124,7 +124,6 @@ const countRepeating = function countRepeating(arr) {
       count += 1;
     }
   }
-  console.log(myObj);
   return myObj;
 };
 
