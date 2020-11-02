@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Show Finder</title>
+</head>
+
+<body>
+  <main>
+    <article class="new-post">
+      <form action="/search" method="GET" class="new-post-form">
+        <label for="searchTerm">
+          Search Show
+          <input type="text" id="searchTerm" name="searchTerm" placeholder="Search..." value="{{post.title}}"
+            class="full-width-input" />
+        </label>
+        <button type="submit">Search</button>
+        <button type="reset">Clear Form</button>
+      </form>
+      {{#if hasErrors}}
+      <ul class="error">
+        {{#each errors}}
+        <li>
+          {{this}}
+        </li>
+        {{/each}}
+      </ul>
+      {{/if}}
+    </article>
+  </main>
+</body>
+
+</html>
