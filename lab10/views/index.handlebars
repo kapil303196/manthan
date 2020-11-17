@@ -1,0 +1,29 @@
+<article>
+  <header>
+    <h2>Please Login</h2>
+  </header>
+
+  <form id="login-form" action="/login" method="post">
+    <table class="login">
+      <tr>
+        <td><label for="name">Username:</label></td>
+        <td><input type="text" name="name" id="name"></td>
+        <td></td>
+      </tr>
+
+      <tr>
+        <td><label for="pass">Password:</label></td>
+        <td><input type="pass" name="pass" id="pass"></td>
+      </tr>
+      <tr>
+        <td><input type="submit" value="Submit"></td>
+      </tr>
+    </table>
+  </form>
+    {{#if error}}
+  <div id="login-error" class="error">
+    <h3>Error:</h3>
+    {{ error }}
+  </div>
+  {{/if}}
+</article>
