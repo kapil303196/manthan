@@ -1,0 +1,90 @@
+.myClassOne {
+    color: red;
+}
+
+.myClassTwo {
+    color: blue;
+}
+
+.error {
+    color: red;
+    font-weight: bold;
+}
+dt {
+    font-weight: bold;
+}
+
+button {
+    border-radius: 15px;
+}
+footer {
+    width: 100%;
+    bottom: 0;
+    /* position: fixed; */
+    display: table;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+.show {
+    display: none;
+}
+.showList {
+    display: none;
+}
+.homeLink {
+    display: none;
+    color: white;
+}
+a {
+    cursor: pointer;
+}
+h1 {
+    color: white;
+}
+header {
+    background-color: brown;
+}
+.parent {
+    display: flex;
+    justify-content: center;
+    padding: 1em;
+}
+body {
+    padding: 2em;
+    background-color: whitesmoke;
+}
+footer {
+    background-color: brown;
+    margin-top: 1em;
+    color: white;
+}
+form {
+    display: flex;
+    justify-content: center;
+    background-color: teal;
+    color: white;
+    padding: 2em;
+}
+
+ul {
+    background-color: tomato;
+    /* padding: 2em 4em; */
+}
+#show {
+    background-color: tomato;
+    padding: 2em;
+    color: white;
+    margin-top: 1em;
+}
+li {
+    color: white;
+}
+a {
+    color: white;
+    font-size: 18px;
+    line-height: 26px;
+}
+.home-link {
+    background-color: teal;
+}
